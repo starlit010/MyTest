@@ -1,4 +1,4 @@
-package com.grayliu.alg.array;
+package com.grayliu.alg.print;
 
 /**
  * Created by liuhui-ds9 on 2018/8/26.
