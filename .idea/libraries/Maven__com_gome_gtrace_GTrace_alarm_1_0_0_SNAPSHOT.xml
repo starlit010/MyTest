@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.gome.gtrace:GTrace-alarm:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gome/gtrace/GTrace-alarm/1.0.0-SNAPSHOT/GTrace-alarm-1.0.0-20160825.104150-28.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gome/gtrace/GTrace-alarm/1.0.0-SNAPSHOT/GTrace-alarm-1.0.0-20160825.104150-28-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gome/gtrace/GTrace-alarm/1.0.0-SNAPSHOT/GTrace-alarm-1.0.0-20160825.104150-28-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.alibaba:Gdubbo-httprest:2.5.5.cat-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/Gdubbo-httprest/2.5.5.cat-SNAPSHOT/Gdubbo-httprest-2.5.5.cat-20171011.054951-57.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/Gdubbo-httprest/2.5.5.cat-SNAPSHOT/Gdubbo-httprest-2.5.5.cat-20171011.054951-57-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/Gdubbo-httprest/2.5.5.cat-SNAPSHOT/Gdubbo-httprest-2.5.5.cat-20171011.054951-57-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

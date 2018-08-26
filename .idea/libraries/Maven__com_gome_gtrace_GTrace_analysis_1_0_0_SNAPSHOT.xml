@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.gome.gtrace:GTrace-analysis:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gome/gtrace/GTrace-analysis/1.0.0-SNAPSHOT/GTrace-analysis-1.0.0-20160825.104226-8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gome/gtrace/GTrace-analysis/1.0.0-SNAPSHOT/GTrace-analysis-1.0.0-20160825.104226-8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gome/gtrace/GTrace-analysis/1.0.0-SNAPSHOT/GTrace-analysis-1.0.0-20160825.104226-8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
