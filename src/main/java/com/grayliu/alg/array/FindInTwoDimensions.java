@@ -1,5 +1,8 @@
 package com.grayliu.alg.array;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by liuhui-ds9 on 2018/7/25.
  */
@@ -36,6 +39,8 @@ public class FindInTwoDimensions {
     public static void main(String...args){
         //16,[[]]
         //7,[[1,2,3,4],[7,8,9,10]]
+        int[] array = {1,2,3,4};
+
     }
 
 }
