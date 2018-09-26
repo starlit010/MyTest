@@ -1,12 +1,26 @@
 package com.grayliu.maven.plugin;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class MavenPluginApplication {
+import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
 
-	public static void main(String[] args) {
-		SpringApplication.run(MavenPluginApplication.class, args);
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class MavenPluginApplication extends AbstractMojo {
+
+	@Override
+	public void execute() throws MojoExecutionException, MojoFailureException {
+		Map map = getPluginContext();
+		Set entrySet = map.entrySet();
+		Iterator iterator = entrySet.iterator();
+		getLog().info("hello world");
+		while(iterator.hasNext()){
+			getLog().info(iterator.next().toString());
+		}
+
+
 	}
 }
