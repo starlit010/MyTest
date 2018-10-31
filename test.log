@@ -1,0 +1,14 @@
+1796 [main] INFO  com.grayliu.nio.HttpServer - 开始处理请求...
+1801 [main] INFO  com.grayliu.nio.HttpServer - 开始处理请求...
+1802 [main] INFO  com.grayliu.nio.HttpHandler - ----控制台输出：-------
+1802 [main] INFO  com.grayliu.nio.HttpHandler - Method:tGET
+1802 [main] INFO  com.grayliu.nio.HttpHandler - url是:	/
+1802 [main] INFO  com.grayliu.nio.HttpHandler - Httpversion是:	HTTP/1.1
+1802 [main] INFO  com.grayliu.nio.HttpHandler - -----输出结束-------------
+1803 [main] INFO  com.grayliu.nio.HttpServer - 开始处理请求...
+2033 [main] INFO  com.grayliu.nio.HttpServer - 开始处理请求...
+2033 [main] INFO  com.grayliu.nio.HttpHandler - ----控制台输出：-------
+2033 [main] INFO  com.grayliu.nio.HttpHandler - Method:tGET
+2033 [main] INFO  com.grayliu.nio.HttpHandler - url是:	/favicon.ico
+2034 [main] INFO  com.grayliu.nio.HttpHandler - Httpversion是:	HTTP/1.1
+2034 [main] INFO  com.grayliu.nio.HttpHandler - -----输出结束-------------

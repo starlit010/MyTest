@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <property name="default_pattern" value="%date [%thread] %-5level %logger{30} - %msg%n"/>
+    <property name="base_dir" value="D:"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoding>UTF-8</encoding>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>${default_pattern}</pattern>
+        </layout>
+    </appender>
+
+    <appender name="BASE_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${base_dir}\base.log</file>
+        <encoding>UTF-8</encoding>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>${default_pattern}</pattern>
+        </layout>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <OnMismatch>DENY</OnMismatch>
+            <OnMatch>ACCEPT</OnMatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${base_dir}\base-%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <!--<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<file>D:\test.log</file>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">-->
+<!--　　　　<fileNamePattern>tests.%i.log.zip</fileNamePattern>-->
+<!--　　　　    <minIndex>1</minIndex>-->
+<!--　　　　　　<maxIndex>3</maxIndex>-->
+<!--　　　　</rollingPolicy>　　　　　　　　　-->
+<!--　　　　<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">-->
+<!--　　　　　　<maxFileSize>5MB</maxFileSize>-->
+    <!--　　</triggeringPolicy>-->
+<!--　　　　<encoder>-->
+<!--　　　　　　<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>-->
+<!--　　 　</encoder>-->
+    <!--</appender>-->
+    <!--<logger name="">-->
+        <!--<level value=""></level>-->
+        <!--<appender-ref ref=""></appender-ref>-->
+    <!--</logger>-->
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"></appender-ref>
+        <appender-ref ref="BASE_LOG"></appender-ref>
+    </root>
+
+</configuration>

@@ -1,4 +1,4 @@
-package main.java.com.grayliu.springboot;
+package com.grayliu.springboot;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
