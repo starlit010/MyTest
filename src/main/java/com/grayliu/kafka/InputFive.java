@@ -13,7 +13,7 @@ public class InputFive extends JFrame {
     private static int WindowWidth = 500;
     private static int WindowHeight = 200;
 
-    public static void main(String...args){
+    public static void main(String... args) {
 
 //        EventQueue.invokeLater(new Thread() {
 //            public void run() {
@@ -34,7 +34,7 @@ public class InputFive extends JFrame {
 
             @Override
             public void keyTyped(KeyEvent e) {
-                if(Character.valueOf(e.getKeyChar()).toString().equals(Character.valueOf(stateMonitor.getChar()).toString().toLowerCase())){
+                if (Character.valueOf(e.getKeyChar()).toString().equals(Character.valueOf(stateMonitor.getChar()).toString().toLowerCase())) {
                     System.out.println(e);
                 }
             }
@@ -57,22 +57,19 @@ public class InputFive extends JFrame {
 
     }
 
-    class StateMonitor{
+    class StateMonitor {
         char c = 'a';
 
-        public char getChar(){
+        public char getChar() {
             return c;
         }
 
-        public void setChar(char c){
+        public void setChar(char c) {
             this.c = c;
         }
     }
 
 }
-
-
-
 
 
 //for(int i =0 ; i < 26; i++){

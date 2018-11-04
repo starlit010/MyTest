@@ -8,8 +8,6 @@ public class Collections {
     static String dirPath = "D:\\SVN\\gome-member\\branches";
 
 
-
-
     public static void main(String[] args) {
 
         File projectDir = new File(dirPath);
@@ -35,14 +33,12 @@ public class Collections {
 //        }
 
 
-
-
-        Integer[] i = {1,2,3,4,5};
-        List<Integer> l =  new ArrayList<Integer>();
+        Integer[] i = {1, 2, 3, 4, 5};
+        List<Integer> l = new ArrayList<Integer>();
         java.util.Collections.addAll(l, i);
 
         Iterator<Integer> iterator = l.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Integer a = iterator.next();
             System.out.println(a);
             iterator.remove();

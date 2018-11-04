@@ -1,27 +1,25 @@
+class Child {
 
-
-class Child{
-	
-	def name = 2
+    def name = 2
 
 }
 
-class Parent{
+class Parent {
 
-	Child child = new Child()
+    Child child = new Child()
 
-	void setChildName(Closure c){
-		c.delegate = child
-		c.setResolveStrategy Closure.DELEGATE_FIRST
-		c()
-	}
+    void setChildName(Closure c) {
+        c.delegate = child
+        c.setResolveStrategy Closure.DELEGATE_FIRST
+        c()
+    }
 
 }
 
 
 def parent = new Parent()
-parent.setChildName{
-	name = "child name"
+parent.setChildName {
+    name = "child name"
 }
 
 

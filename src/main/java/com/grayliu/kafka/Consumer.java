@@ -25,7 +25,7 @@ public class Consumer {
         ArrayList<TopicPartition> topicPartitions = new ArrayList<TopicPartition>();
         Map<String, List<PartitionInfo>> listTopics = consumer.listTopics();
         Set<Map.Entry<String, List<PartitionInfo>>> entries = listTopics.entrySet();
-        for (Map.Entry<String, List<PartitionInfo>> entry: entries) {
+        for (Map.Entry<String, List<PartitionInfo>> entry : entries) {
             System.out.println("topic:" + entry.getKey());
             System.out.println("topic:" + entry.getValue());
         }
@@ -33,14 +33,13 @@ public class Consumer {
         consumer.subscribe(Arrays.asList("cluster-test"));
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(30));
-            for (ConsumerRecord<String, String> record : records){
+            for (ConsumerRecord<String, String> record : records) {
                 System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
             }
         }
     }
 
     /**
-     *
      * @throws FileNotFoundException
      */
     public void commitControl(List<String> topics) throws FileNotFoundException {
@@ -89,7 +88,7 @@ public class Consumer {
         props.put("enable.auto.commit", "false");
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
         consumer.subscribe(topics);
-        consumer.seek(new TopicPartition("cluster-test", 0),1);
+        consumer.seek(new TopicPartition("cluster-test", 0), 1);
         ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
         for (ConsumerRecord<String, String> record : records) {
             System.err.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
@@ -104,23 +103,23 @@ public class Consumer {
         buffer.stream().map(x -> x.value()).forEach(System.err::println);
     }
 
-    public void ManualOffset(){
+    public void ManualOffset() {
         Properties props = new Properties();
 
         props.put("auto.offset.reset", "earliest");
         props.put("session.timeout.ms", "30000");
-        KafkaConsumer<String ,String> consumer = new KafkaConsumer<String ,String>(props);
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
         consumer.subscribe(Arrays.asList("cluster-test"));
         final int minBatchSize = 5;
         List<ConsumerRecord<String, String>> buffer = new ArrayList<>();
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
             for (ConsumerRecord<String, String> record : records) {
-                System.out.println("consumer message values is "+record.value()+" and the offset is "+ record.offset());
+                System.out.println("consumer message values is " + record.value() + " and the offset is " + record.offset());
                 buffer.add(record);
             }
             if (buffer.size() >= minBatchSize) {
-                System.out.println("now commit offset"+buffer.size());
+                System.out.println("now commit offset" + buffer.size());
                 consumer.commitSync();
                 buffer.clear();
             }

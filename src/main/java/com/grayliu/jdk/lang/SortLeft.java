@@ -7,19 +7,19 @@ import java.util.Arrays;
  */
 public class SortLeft {
 
-    int[] array = {1,2,2,2,3,4,5,6};
+    int[] array = {1, 2, 2, 2, 3, 4, 5, 6};
 
-    public void sortLeft(){
+    public void sortLeft() {
         int temp = 0;
 
-        for(int i = 1 ; i < array.length ; i++){
+        for (int i = 1; i < array.length; i++) {
 
-            if(array[i] != array[i-1] && temp != 0){
+            if (array[i] != array[i - 1] && temp != 0) {
                 int temp1 = array[temp];
                 array[temp] = array[i];
                 array[i] = temp1;
                 temp++;
-            }else if(array[i] == array[i-1] && array[i] != array[temp]){
+            } else if (array[i] == array[i - 1] && array[i] != array[temp]) {
                 temp = i;
             }
 
@@ -28,7 +28,7 @@ public class SortLeft {
         System.out.println(Arrays.toString(array));
     }
 
-    public static void main(String...args){
+    public static void main(String... args) {
         SortLeft sortLeft = new SortLeft();
         sortLeft.sortLeft();
     }

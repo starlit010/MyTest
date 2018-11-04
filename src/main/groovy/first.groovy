@@ -1,8 +1,6 @@
+static void main(String) {
 
-
-static void main(String){
-
-	println("hello world123")
+    println("hello world123")
 
 }
 

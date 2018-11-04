@@ -5,15 +5,17 @@ package com.grayliu.alg.string;
  */
 public class KmpVariant {
 
-    public static int kmpVariant(char[] strArray,char[] patArray){
-        outer:for(int i = 0 ; i < strArray.length ; i++){
+    public static int kmpVariant(char[] strArray, char[] patArray) {
+        outer:
+        for (int i = 0; i < strArray.length; i++) {
             int temp = i;
-            inner:for(int j = 0 ; j < patArray.length ; j++){
-                if(strArray[temp] == patArray[j] && j < patArray.length -1){
+            inner:
+            for (int j = 0; j < patArray.length; j++) {
+                if (strArray[temp] == patArray[j] && j < patArray.length - 1) {
                     temp++;
-                }else if(strArray[temp] == patArray[j] && j == patArray.length -1){
+                } else if (strArray[temp] == patArray[j] && j == patArray.length - 1) {
                     return i;
-                }else{
+                } else {
                     continue outer;
                 }
             }
@@ -21,7 +23,7 @@ public class KmpVariant {
         return -1;
     }
 
-    public static void main(String...args){
+    public static void main(String... args) {
         String value = "BBCABCDABABCDABCDABDE";
         String pattern = "ABCDABD";
         System.out.println(kmpVariant(value.toCharArray(), pattern.toCharArray()));

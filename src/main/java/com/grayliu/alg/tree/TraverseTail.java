@@ -5,63 +5,58 @@ package com.grayliu.alg.tree;
  */
 public class TraverseTail {
 
-    int[] items = {1,2,3,45,4,4,23,23,45,7};
+    int[] items = {1, 2, 3, 45, 4, 4, 23, 23, 45, 7};
 
     /**
-     *
      * @param i
-     * @return
-     *
-     *      1
-     *     2 3
-     *   45 4 4 23
-     *  23 45 7
-     *
-     *
+     * @return 1
+     * 2 3
+     * 45 4 4 23
+     * 23 45 7
      */
-    public boolean hasLeftChild(int i){
-        if(items.length <= 1){
+    public boolean hasLeftChild(int i) {
+        if (items.length <= 1) {
             return false;
         }
-        if( 2 * i > items.length){
+        if (2 * i > items.length) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
 
-    public boolean hasRightChild(int i){
-        if(items.length <= 1){
+    public boolean hasRightChild(int i) {
+        if (items.length <= 1) {
             return false;
         }
-        if( 2 * i + 1 > items.length){
+        if (2 * i + 1 > items.length) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
 
-    public void printParent(int i){
-        if(items.length >= i){
-            System.out.println(items[i-1]);
+    public void printParent(int i) {
+        if (items.length >= i) {
+            System.out.println(items[i - 1]);
         }
     }
 
-    public void traverseTail(int i){
-        if(hasLeftChild(i)){
-            traverseTail( 2 * i );
+    public void traverseTail(int i) {
+        if (hasLeftChild(i)) {
+            traverseTail(2 * i);
         }
-        if(hasRightChild(i)){
-            traverseTail( 2 * i + 1 );
+        if (hasRightChild(i)) {
+            traverseTail(2 * i + 1);
         }
-        if(items.length >= i){
+        if (items.length >= i) {
             printParent(i);
         } else {
             return;
         }
     }
 
-    public static void main(String... args){
+    public static void main(String... args) {
         TraverseTail TraverseTail = new TraverseTail();
         TraverseTail.traverseTail(1);
     }
