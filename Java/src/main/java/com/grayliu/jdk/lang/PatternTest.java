@@ -1,4 +1,4 @@
-package main.java.com.grayliu.jdk.lang;
+package com.grayliu.jdk.lang;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

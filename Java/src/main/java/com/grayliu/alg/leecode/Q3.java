@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.leecode;
+package com.grayliu.alg.leecode;
 
 /**
  * Created by liuhui-ds9 on 2018/3/15.

@@ -1,4 +1,4 @@
-package main.java.com.grayliu.jdk.concurrent;
+package com.grayliu.jdk.concurrent;
 
 /**
  * Created by liuhui-ds9 on 2018/3/6.

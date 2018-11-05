@@ -1,6 +1,6 @@
-package main.java.com.grayliu.alg.sort;
+package com.grayliu.alg.sort;
 
-import main.java.com.grayliu.alg.utils.TreeUtil;
+import com.grayliu.alg.utils.TreeUtil;
 
 import java.util.Arrays;
 

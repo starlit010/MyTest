@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.sort;
+package com.grayliu.alg.sort;
 
 import java.util.Arrays;
 

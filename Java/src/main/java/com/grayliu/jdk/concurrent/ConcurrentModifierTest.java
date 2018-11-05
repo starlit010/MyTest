@@ -1,4 +1,4 @@
-package main.java.com.grayliu.jdk.concurrent;
+package com.grayliu.jdk.concurrent;
 
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -41,11 +41,11 @@
     <dubbo:registry id="memberZookeeper" protocol="zookeeper" address="10.112.179.149:2181,10.112.179.150:2181,10.112.179.151:2181" check="false"/>
     <!--<dubbo:reference  id="shoppingCartQueryClient" interface="com.gome.pangu.trading.cart.client.ShoppingCartQueryClient" check="false" />-->
 
-    <dubbo:reference id="shoppingCartQueryClient" interface="com.gome.pangu.trading.cart.client.ShoppingCartQueryClient" check="false" version="1.2.5"/>
+    <!--<dubbo:reference id="shoppingCartQueryClient" interface="com.gome.pangu.trading.cart.client.ShoppingCartQueryClient" check="false" version="1.2.5"/>-->
 
-    <bean class="DubboConnection.DubboClient" init-method="start">
-      <property name="shoppingCartQueryClient" ref="shoppingCartQueryClient" />
-    </bean>
+    <!--<bean class="DubboConnection.DubboClient" init-method="start">-->
+      <!--<property name="shoppingCartQueryClient" ref="shoppingCartQueryClient" />-->
+    <!--</bean>-->
     <!--<dubbo:service interface="com.gome.pangu.trading.cart.client.ShoppingCartQueryClient" ref="shoppingCartQueryClient" registry="zookeeper"/>-->
 
     <!-- 前台组appraise-service-i项目提供的服务 start -->

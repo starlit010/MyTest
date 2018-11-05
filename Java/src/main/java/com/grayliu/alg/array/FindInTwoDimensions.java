@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.array;
+package com.grayliu.alg.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;

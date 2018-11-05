@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.collection.queue;
+package com.grayliu.alg.collection.queue;
 
 /**
  * Created by liuhui-ds9 on 2017/8/18.

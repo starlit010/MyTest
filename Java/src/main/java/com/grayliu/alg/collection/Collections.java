@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.collection;
+package com.grayliu.alg.collection;
 
 import java.io.File;
 import java.util.*;

@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.string;
+package com.grayliu.alg.string;
 
 /**
  * Created by liuhui-ds9 on 2018/3/12.

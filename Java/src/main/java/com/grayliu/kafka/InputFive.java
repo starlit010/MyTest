@@ -1,4 +1,4 @@
-package main.java.com.grayliu.kafka;
+package com.grayliu.kafka;
 
 import javax.swing.*;
 import java.awt.*;

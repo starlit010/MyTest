@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.character;
+package com.grayliu.alg.character;
 
 /**
  * Created by liuhui-ds9 on 2018/7/25.

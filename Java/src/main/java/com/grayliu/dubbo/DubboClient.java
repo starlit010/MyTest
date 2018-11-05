@@ -1,4 +1,4 @@
-package main.java.com.grayliu.dubbo;
+package com.grayliu.dubbo;
 
 //import com.gome.framework.base.ResultDTO;
 //import com.gome.pangu.trading.bo.User;

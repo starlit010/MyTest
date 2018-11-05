@@ -1,4 +1,4 @@
-package main.java.com.grayliu.kafka;
+package com.grayliu.kafka;
 
 import java.io.FileNotFoundException;
 import java.util.*;

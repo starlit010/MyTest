@@ -1,4 +1,4 @@
-package main.java.com.grayliu.jdk.lang;
+package com.grayliu.jdk.lang;
 
 /**
  * Created by liuhui-ds9 on 2018/8/23.

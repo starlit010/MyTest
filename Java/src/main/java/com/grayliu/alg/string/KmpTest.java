@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.string;
+package com.grayliu.alg.string;
 
 import java.util.*;
 
