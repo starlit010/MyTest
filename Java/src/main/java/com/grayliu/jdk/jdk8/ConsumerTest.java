@@ -1,4 +1,4 @@
-package main.java.com.grayliu.jdk.jdk8;
+package com.grayliu.jdk.jdk8;
 
 import java.util.function.Consumer;
 

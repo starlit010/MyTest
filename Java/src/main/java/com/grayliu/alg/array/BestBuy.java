@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.array;
+package com.grayliu.alg.array;
 
 /**
  * Created by liuhui-ds9 on 2018/9/5.

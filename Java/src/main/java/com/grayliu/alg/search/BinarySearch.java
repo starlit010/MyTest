@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.search;
+package com.grayliu.alg.search;
 
 /**
  * Created by liuhui-ds9 on 2018/3/16.

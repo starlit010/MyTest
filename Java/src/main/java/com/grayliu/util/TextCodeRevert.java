@@ -1,4 +1,4 @@
-package main.java.com.grayliu.util;
+package com.grayliu.util;
 
 import java.io.File;
 import java.io.FileReader;

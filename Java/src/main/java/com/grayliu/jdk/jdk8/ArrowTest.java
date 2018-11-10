@@ -1,4 +1,4 @@
-package main.java.com.grayliu.jdk.jdk8;
+package com.grayliu.jdk.jdk8;
 
 import java.util.function.Function;
 
@@ -12,8 +12,18 @@ public class ArrowTest {
 
     public void test(){
 
-        Function<String,String> f = str -> new String("1234");
+        Function<String,String> f = str -> str + "1";
 
+        Function<String,String> f1 = temp -> temp + "2";
+
+        String result = f.andThen(f1).apply("0");
+
+        System.out.println(result);
+
+    }
+
+    public static void main(String...args){
+        new ArrowTest().test();
     }
 
 

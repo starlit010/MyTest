@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.tree;
+package com.grayliu.alg.tree;
 
 /**
  * Created by liuhui-ds9 on 2018/2/8.

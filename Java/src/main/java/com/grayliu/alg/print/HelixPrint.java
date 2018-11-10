@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.print;
+package com.grayliu.alg.print;
 
 /**
  * Created by liuhui-ds9 on 2018/3/13.

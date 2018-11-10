@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.dynamic;
+package com.grayliu.alg.dynamic;
 
 import java.util.Arrays;
 

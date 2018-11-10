@@ -1,4 +1,4 @@
-package main.java.com.grayliu.alg.offer;
+package com.grayliu.alg.offer;
 
 import java.util.LinkedList;
 import java.util.List;
