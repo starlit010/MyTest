@@ -7,7 +7,7 @@ import lombok.Data;
  */
 
 @Data
-public class ValueModule {
+public class ValueData {
 
     String total;
 
@@ -17,7 +17,7 @@ public class ValueModule {
 
     String failture;
 
-    String failurePercent;
+    String qps;
 
 
 }

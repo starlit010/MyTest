@@ -12,8 +12,8 @@ import java.io.*;
  */
 public class CatPage {
 
-    public WatchData ParseHtml(Reader reader) {
-        WatchData wd = null;
+    public HtmlData ParseHtml(Reader reader) {
+        HtmlData wd = null;
         StringBuffer sb = new StringBuffer();
         try {
             BufferedReader br = new BufferedReader(reader);
@@ -27,7 +27,7 @@ public class CatPage {
             Element table = item.child(0);
             if(table.children().size() > 6){
                 Element row = table.child(6);
-                wd = new WatchData();
+                wd = new HtmlData();
                 wd.setName(row.child(0).text());
                 wd.setTotal(row.child(1).text());
                 wd.setFailure(row.child(2).text());

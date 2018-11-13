@@ -15,6 +15,7 @@
         <module>MyVesta</module>
         <module>ExecScript</module>
         <module>Dubbo</module>
+        <module>AutoClawer</module>
     </modules>
 
 
