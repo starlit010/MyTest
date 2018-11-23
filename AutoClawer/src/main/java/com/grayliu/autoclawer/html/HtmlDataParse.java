@@ -10,7 +10,7 @@ import java.io.*;
 /**
  * Created by liuhui-ds9 on 2018/11/9.
  */
-public class CatPage {
+public class HtmlDataParse {
 
     public HtmlData ParseHtml(Reader reader) {
         HtmlData wd = null;
@@ -54,7 +54,7 @@ public class CatPage {
 
     public static void main(String...args) throws IOException {
 
-        File file = new File("D:\\ProjectMine\\MyTest\\AutoClawer\\src\\main\\resources\\CatPage.html");
+        File file = new File("D:\\ProjectMine\\MyTest\\AutoClawer\\src\\main\\resources\\HtmlDataParse.html");
 
 
 //        System.out.println(wd.toString());

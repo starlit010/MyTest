@@ -1,6 +1,7 @@
 package com.grayliu.autoclawer.http;
 
-import com.grayliu.autoclawer.html.CatPage;
+import com.grayliu.autoclawer.html.GushiPage;
+import com.grayliu.autoclawer.html.HtmlDataParse;
 import com.grayliu.autoclawer.html.HtmlData;
 import com.grayliu.autoclawer.html.TotalPage;
 import com.grayliu.autoclawer.http.enums.DomainEnum;
@@ -62,6 +63,33 @@ public class HttpClawer {
         return result;
     }
 
+    public String clawerUrl(String url){
+        CloseableHttpClient httpCilent = HttpClients.createDefault();//Creates CloseableHttpClient instance with default configuration.
+
+        HttpGet httpGet = new HttpGet(url);
+
+        InputStreamReader inputStreamReader = null;
+
+        String content = null;
+        try {
+            CloseableHttpResponse response = httpCilent.execute(httpGet);
+            InputStream inputStream = response.getEntity().getContent();
+            inputStreamReader = new InputStreamReader(inputStream);
+            GushiPage gushiPage = new GushiPage();
+            content = gushiPage.parseHtml(inputStreamReader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }  finally {
+            try {
+                httpCilent.close();//释放资源
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return content;
+    }
+
     public HtmlData clawerData(String url){
         CloseableHttpClient httpCilent = HttpClients.createDefault();//Creates CloseableHttpClient instance with default configuration.
 
@@ -72,8 +100,8 @@ public class HttpClawer {
             CloseableHttpResponse response = httpCilent.execute(httpGet);
             InputStream inputStream = response.getEntity().getContent();
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-            CatPage catPage = new CatPage();
-            watchData = catPage.ParseHtml(inputStreamReader);
+            HtmlDataParse htmlDataParse = new HtmlDataParse();
+            watchData = htmlDataParse.ParseHtml(inputStreamReader);
 
         } catch (IOException e) {
             e.printStackTrace();

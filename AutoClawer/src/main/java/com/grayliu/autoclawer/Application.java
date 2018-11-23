@@ -2,11 +2,11 @@ package com.grayliu.autoclawer;
 
 import com.grayliu.autoclawer.html.HtmlData;
 import com.grayliu.autoclawer.http.HttpClawer;
+import com.grayliu.autoclawer.util.OutputTemplate;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by liuhui-ds9 on 2018/11/9.
@@ -38,7 +38,7 @@ public class Application {
 
         StringBuffer sb = new StringBuffer();
 
-        sb.append(OutputTemplate.templateItem("gome-detail-service",from,detail.getTotal(),detail.getAvg(),detail.getLine95(),detail.getQps()));
+        sb.append(OutputTemplate.templateItem("gome-detail-service", from, detail.getTotal(), detail.getAvg(), detail.getLine95(), detail.getQps()));
         sb.append("\n----------------------------\n");
         sb.append(OutputTemplate.templateItem("stage-cheap-dubbo",from,stage.getTotal(),stage.getAvg(),stage.getLine95(),stage.getQps()));
         sb.append("\n----------------------------\n");

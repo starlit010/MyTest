@@ -1,0 +1,23 @@
+##数据库配置
+#spring.datasource.url=jdbc:mysql://localhost:3306/clawer?serverTimezone=Asia/Shanghai
+#spring.datasource.username=root
+#spring.datasource.password=root
+#spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+#
+##配置.xml文件路径
+#mybatis.mapper-locations=classpath:mapper/*.xml
+##配置模型路径
+#mybatis.type-aliases-package=com.grayliu.autoclawer.entity
+
+mybatis:
+    mapperLocations: classpath:mapper/*.xml
+    typeAliasesPackage: com.grayliu.autoclawer.entity
+
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/clawer?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=GBK
+    username: root
+    password: root
