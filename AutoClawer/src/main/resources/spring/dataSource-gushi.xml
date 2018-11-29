@@ -17,36 +17,36 @@
 	<!--</bean>-->
 
 	<!-- 自动扫描 mapper 接口 -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.gome.goods.collect.service.dao.mapper.oracle" />
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryProd"></property>
-		<!--<property name="sqlSessionTemplate" ref="sqlSessionProd" /> -->
-	</bean>
+	<!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+		<!--<property name="basePackage" value="com.gome.goods.collect.service.dao.mapper.oracle" />-->
+		<!--<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryProd"></property>-->
+		<!--&lt;!&ndash;<property name="sqlSessionTemplate" ref="sqlSessionProd" /> &ndash;&gt;-->
+	<!--</bean>-->
 
-	<bean id="sqlSessionFactoryProd" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="bbc_catx" />
-		<!--<property name="configLocation" value="classpath:configers/mybatis-prod.xml" />-->
-		<property name="mapperLocations" value="classpath:mappers/oracle/*.xml" />
-	</bean>
+	<!--<bean id="sqlSessionFactoryProd" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+		<!--<property name="dataSource" ref="bbc_catx" />-->
+		<!--&lt;!&ndash;<property name="configLocation" value="classpath:configers/mybatis-prod.xml" />&ndash;&gt;-->
+		<!--<property name="mapperLocations" value="classpath:mappers/oracle/*.xml" />-->
+	<!--</bean>-->
 
-	<bean id="bbc_catx" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
-		<property name="filters" value="mergeStat,wall,stat,log4j" />
-		<property name="url" value="${bbc_catx.url}" />
-		<property name="username" value="UAT_PRODX_6" />
-		<property name="password" value="Af3poO7LJNMbP2QM" />
-		<!--<property name="maxActive" value="${bbc_catx.maxActive}" />-->
-		<!--<property name="initialSize" value="${bbc_catx.initialSize}" />-->
-		<!--<property name="maxWait" value="${bbc_catx.maxWait}" />-->
-		<!--<property name="minIdle" value="${bbc_catx.minIdle}" />-->
-		<property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}" />
-		<property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}" />
-		<property name="validationQuery" value="SELECT 'x' from dual" />
-		<property name="testWhileIdle" value="true" />
-		<property name="testOnBorrow" value="false" />
-		<property name="testOnReturn" value="false" />
-		<property name="poolPreparedStatements" value="true" />
-		<property name="maxPoolPreparedStatementPerConnectionSize" value="${maxPoolPreparedStatementPerConnectionSize}" />
-	</bean>
+	<!--<bean id="bbc_catx" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">-->
+		<!--<property name="filters" value="mergeStat,wall,stat,log4j" />-->
+		<!--<property name="url" value="${bbc_catx.url}" />-->
+		<!--<property name="username" value="UAT_PRODX_6" />-->
+		<!--<property name="password" value="Af3poO7LJNMbP2QM" />-->
+		<!--&lt;!&ndash;<property name="maxActive" value="${bbc_catx.maxActive}" />&ndash;&gt;-->
+		<!--&lt;!&ndash;<property name="initialSize" value="${bbc_catx.initialSize}" />&ndash;&gt;-->
+		<!--&lt;!&ndash;<property name="maxWait" value="${bbc_catx.maxWait}" />&ndash;&gt;-->
+		<!--&lt;!&ndash;<property name="minIdle" value="${bbc_catx.minIdle}" />&ndash;&gt;-->
+		<!--<property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}" />-->
+		<!--<property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}" />-->
+		<!--<property name="validationQuery" value="SELECT 'x' from dual" />-->
+		<!--<property name="testWhileIdle" value="true" />-->
+		<!--<property name="testOnBorrow" value="false" />-->
+		<!--<property name="testOnReturn" value="false" />-->
+		<!--<property name="poolPreparedStatements" value="true" />-->
+		<!--<property name="maxPoolPreparedStatementPerConnectionSize" value="${maxPoolPreparedStatementPerConnectionSize}" />-->
+	<!--</bean>-->
 
 	<!--<bean id="oracleDataSource" class="com.gome.memberCenter.common.dataSource.DynamicDataSource">-->
 	<!--<property name="targetDataSources">-->
