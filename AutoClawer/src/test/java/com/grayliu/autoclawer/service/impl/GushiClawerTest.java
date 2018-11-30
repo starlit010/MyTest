@@ -9,14 +9,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * Created by liuhui-ds9 on 2018/11/22.
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class GushiClawerTest {
 
-    @Autowired
+//    @Autowired
     GushiClawer gushiClawer;
 
-    @Test
+//    @Test
     public void testInsert(){
         GushiClawer.Function0 function0 = gushiClawer.new Function0();
         GushiClawer.Function1 function1 = gushiClawer.new Function1();

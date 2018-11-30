@@ -1,8 +1,8 @@
 package com.grayliu.autoclawer;
 
-import com.grayliu.autoclawer.html.HtmlData;
-import com.grayliu.autoclawer.http.HttpClawer;
-import com.grayliu.autoclawer.util.OutputTemplate;
+import com.grayliu.autoclawer.html.monitor.HtmlData;
+import com.grayliu.autoclawer.html.monitor.HttpClawer;
+import com.grayliu.autoclawer.html.monitor.OutputTemplate;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -3,7 +3,7 @@
 
 <mapper namespace="com.grayliu.autoclawer.dao.GushiDao">
 
-    <resultMap id="GushiMap" type="com.grayliu.autoclawer.entity.Gushi">
+    <resultMap id="GushiMap" type="com.grayliu.autoclawer.entity.gushi.Gushi">
         <id column="ID" jdbcType="INTEGER" property="id" />
         <result column="AUTHOR" jdbcType="VARCHAR" property="author" />
         <result column="TITLE" jdbcType="VARCHAR" property="title" />
@@ -24,7 +24,7 @@
         </foreach>
     </insert>
 
-    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.grayliu.autoclawer.entity.Gushi">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.grayliu.autoclawer.entity.gushi.Gushi">
         insert into gushi(author,title,age,content,category,category_num,create_time) values
         (#{author,jdbcType=VARCHAR},#{title,jdbcType=VARCHAR},#{age,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR},#{category,jdbcType=VARCHAR},#{categoryNum,jdbcType=INTEGER},#{createTime,jdbcType=TIMESTAMP})
     </insert>

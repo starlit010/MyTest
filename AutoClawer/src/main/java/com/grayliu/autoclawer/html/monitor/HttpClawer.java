@@ -1,11 +1,8 @@
-package com.grayliu.autoclawer.http;
+package com.grayliu.autoclawer.html.monitor;
 
-import com.grayliu.autoclawer.html.GushiPage;
-import com.grayliu.autoclawer.html.HtmlDataParse;
-import com.grayliu.autoclawer.html.HtmlData;
-import com.grayliu.autoclawer.html.TotalPage;
-import com.grayliu.autoclawer.http.enums.DomainEnum;
-import com.grayliu.autoclawer.http.enums.TotalDomainEnum;
+import com.grayliu.autoclawer.html.gushi.GushiPage;
+import com.grayliu.autoclawer.html.monitor.enums.DomainEnum;
+import com.grayliu.autoclawer.html.monitor.enums.TotalDomainEnum;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;

@@ -15,3 +15,26 @@ CREATE TABLE `clawer`.`dictionary` (
   `english` VARCHAR(45) NULL,
   `chinese` VARCHAR(100) NULL,
   PRIMARY KEY (`id`));
+
+CREATE TABLE `filesystem` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `location` varchar(100) DEFAULT NULL,
+  `real_path` varchar(200) DEFAULT NULL,
+  `relative_path` varchar(200) DEFAULT NULL,
+  `content` longblob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `xwlbo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) DEFAULT NULL,
+  `content` mediumtext,
+  `location` varchar(100) DEFAULT NULL,
+  `real_path` varchar(100) DEFAULT NULL,
+  `relative_path` varchar(100) DEFAULT NULL,
+  `news_date` date DEFAULT NULL,
+  `create_date` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  FULLTEXT KEY `content` (`content`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+

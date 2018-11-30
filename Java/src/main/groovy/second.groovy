@@ -1,4 +1,6 @@
-package main.groovy
+package groovy
+
+import com.sun.corba.se.spi.orbutil.closure.Closure
 
 class Child{
 	

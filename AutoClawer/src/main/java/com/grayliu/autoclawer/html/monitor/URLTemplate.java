@@ -1,7 +1,7 @@
-package com.grayliu.autoclawer.http;
+package com.grayliu.autoclawer.html.monitor;
 
-import com.grayliu.autoclawer.http.enums.TotalDomainEnum;
-import com.grayliu.autoclawer.http.enums.DomainEnum;
+import com.grayliu.autoclawer.html.monitor.enums.TotalDomainEnum;
+import com.grayliu.autoclawer.html.monitor.enums.DomainEnum;
 
 import java.text.SimpleDateFormat;
 import java.util.*;

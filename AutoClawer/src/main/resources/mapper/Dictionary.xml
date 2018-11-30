@@ -3,7 +3,7 @@
 
 <mapper namespace="com.grayliu.autoclawer.dao.DictionaryDao">
 
-    <resultMap id="GushiMap" type="com.grayliu.autoclawer.entity.Dictionary">
+    <resultMap id="GushiMap" type="com.grayliu.autoclawer.entity.dictionary.Dictionary">
         <id column="ID" jdbcType="INTEGER" property="id" />
         <result column="ENGLISH" jdbcType="VARCHAR" property="english" />
         <result column="CHINESE" jdbcType="VARCHAR" property="chinese" />

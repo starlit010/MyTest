@@ -1,8 +1,7 @@
 package com.grayliu.autoclawer;
 
-import com.grayliu.autoclawer.dao.GushiDao;
-import com.grayliu.autoclawer.entity.Gushi;
 import com.grayliu.autoclawer.service.impl.GushiClawer;
+import com.grayliu.autoclawer.service.impl.XwlboClawer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
@@ -10,10 +9,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by liuhui-ds9 on 2018/11/21.
@@ -26,16 +21,20 @@ public class CommandApplication implements CommandLineRunner {
     @Autowired
     GushiClawer gushiClawer;
 
+    @Autowired
+    XwlboClawer xwlboClawer;
+
     @Override
     public void run(String... strings) throws Exception {
-//        Gushi gushi = new Gushi();
+//        gushi gushi = new gushi();
 //        gushi.setAge("asfasfd");
 //        gushi.setContent("sfasdfsf");
-//        List<Gushi> list = new ArrayList<Gushi>();
+//        List<gushi> list = new ArrayList<gushi>();
 //        list.add(gushi);
 //        gushiClawer.insertToDB(list);
 
 //        gushiClawer.clawerFromFiles();
+        xwlboClawer.clawerHtml();
     }
 
     public static void main(String...args){

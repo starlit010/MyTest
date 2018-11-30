@@ -9,4 +9,8 @@ public interface BaseDao<T> {
     int insertList(List<T> list);
 
     int insert(T t);
+
+    List<T> queryList(T t);
+
+    T queryById(Integer id);
 }

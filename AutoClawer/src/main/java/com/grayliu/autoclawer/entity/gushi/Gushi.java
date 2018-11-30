@@ -1,4 +1,4 @@
-package com.grayliu.autoclawer.entity;
+package com.grayliu.autoclawer.entity.gushi;
 
 import lombok.Data;
 

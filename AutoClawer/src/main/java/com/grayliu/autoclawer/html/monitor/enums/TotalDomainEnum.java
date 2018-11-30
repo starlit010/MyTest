@@ -1,4 +1,4 @@
-package com.grayliu.autoclawer.http.enums;
+package com.grayliu.autoclawer.html.monitor.enums;
 
 /**
  * Created by liuhui-ds9 on 2018/11/11.
