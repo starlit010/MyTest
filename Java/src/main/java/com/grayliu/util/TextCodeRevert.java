@@ -25,16 +25,16 @@ public class TextCodeRevert{
 			
 			while(true){
 				
-					line = br.readLine();
-					if(line != null){
-						byte[] oriBytes = line.getBytes(oriCode);
-						String newLine = new String(oriBytes,newCode);
-						bw.write(newLine,0,newLine.length());
-						bw.write("\r\n",0,2);
-					}else{
-						bw.close();
-						break;
-					}
+				line = br.readLine();
+				if(line != null){
+					byte[] oriBytes = line.getBytes(oriCode);
+					String newLine = new String(oriBytes,newCode);
+					bw.write(newLine,0,newLine.length());
+					bw.write("\r\n",0,2);
+				}else{
+					bw.close();
+					break;
+				}
 				
 			}
 		
