@@ -13,9 +13,9 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * Created by liuhui-ds9 on 2018/11/21.
  */
-@EnableAutoConfiguration
-@ComponentScan(basePackages={"com.grayliu.autoclawer"})
-@SpringBootApplication
+//@EnableAutoConfiguration
+//@ComponentScan(basePackages={"com.grayliu.autoclawer"})
+//@SpringBootApplication
 public class CommandApplication implements CommandLineRunner {
 
     @Autowired
@@ -32,9 +32,8 @@ public class CommandApplication implements CommandLineRunner {
 //        List<gushi> list = new ArrayList<gushi>();
 //        list.add(gushi);
 //        gushiClawer.insertToDB(list);
-
 //        gushiClawer.clawerFromFiles();
-        xwlboClawer.clawerHtml();
+//        xwlboClawer.clawerHtml();
     }
 
     public static void main(String...args){

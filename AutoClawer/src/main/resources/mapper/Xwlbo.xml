@@ -27,22 +27,22 @@
 
     <select id="queryList" resultMap="XwContentMap">
         select * from xwlbo where 1 = 1
-        <if test="location!=null">
+        <if test="location != null">
             and location = #{location}
         </if>
-        <if test="realPath!=null">
+        <if test="realPath != null">
             and real_path = #{realPath}
         </if>
-        <if test="relativePath!=null">
+        <if test="relativePath != null">
             and relative_path = #{relativePath}
         </if>
-        <if test="title!=null">
-            and title like '%#{relativePath}%'
+        <if test="title != null">
+            and title like #{relativePath}
         </if>
-        <if test="content!=null">
-            and content like '%#{relativePath}%'
+        <if test="content != null">
+            and content like #{relativePath}
         </if>
-        <if test="newsDate!=null">
+        <if test="newsDate != null">
             and news_date = #{newsDate}
         </if>
     </select>
@@ -50,6 +50,5 @@
     <select id="queryById" resultMap="XwContentMap">
         select * from xwlbo where id = #{id}
     </select>
-
 
 </mapper>

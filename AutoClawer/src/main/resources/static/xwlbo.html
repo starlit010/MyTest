@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <div>
+        Date: <input type="text" id="dateStr"/>Path: <input type="text" id="realPath"/><input type="button" value="确定" onclick="clawer()">
+    </div>
+
+</body>
+<script type="text/javascript">
+    function clawer(){
+        var dateStr = document.getElementById("dateStr");
+        var realPath = document.getElementById("realPath");
+        if(dateStr != null && realPath != null){
+            var url="/xwlbo/clawer?date="+dateStr.value+"&path="+realPath.value;
+            var request = new XMLHttpRequest();
+            var timeout = false;
+            var timer = setTimeout( function(){
+                timeout = true;
+                request.abort();
+            }, 100 );
+            request.open( "GET", url );
+            request.onreadystatechange = function(){
+                if( request.readyState !== 4 ) return;
+                if( timeout ) return;
+                clearTimeout( timer );
+                if( request.status === 200 ){
+                    alert( request.responseText );
+                }
+            }
+            request.send( null );
+        }
+    }
+</script>
+</html>
