@@ -44,7 +44,10 @@ public class Producer {
 //                    }
 //                }
 //            });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6a15cda51e1578d0a6e84bb05fa0d74cc61286e9
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e1) {
