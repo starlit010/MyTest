@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.grayliu.autoclawer.dao.XwlboDao">
+
+    <resultMap id="XwContentMap" type="com.grayliu.autoclawer.entity.xwlbo.Xwlbo">
+        <id column="ID" jdbcType="INTEGER" property="id" />
+        <result column="LOCATION" jdbcType="VARCHAR" property="location" />
+        <result column="REAL_PATH" jdbcType="VARCHAR" property="realPath" />
+        <result column="RELATIVE_PATH" jdbcType="VARCHAR" property="relativePath" />
+        <result column="TITLE" jdbcType="VARCHAR" property="title" />
+        <result column="CONTENT" jdbcType="VARCHAR" property="content" />
+        <result column="NEWS_DATE" jdbcType="DATE" property="newsDate" />
+        <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.grayliu.autoclawer.entity.xwlbo.Xwlbo">
+        insert into xwlbo(location,real_path,relative_path,title,content,news_date,create_date) values(#{location,jdbcType=VARCHAR},#{realPath,jdbcType=VARCHAR},#{relativePath,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR},#{newsDate,jdbcType=DATE},now())
+    </insert>
+
+    <insert id="insertList" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.List">
+        insert into xwlbo(location,real_path,relative_path,title,content,news_date,create_date) values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.location,jdbcType=VARCHAR},#{item.realPath,jdbcType=VARCHAR},#{item.relativePath,jdbcType=VARCHAR},#{item.title,jdbcType=VARCHAR},#{item.content,jdbcType=VARCHAR},#{item.newsDate,jdbcType=DATE},now())
+        </foreach>
+    </insert>
+
+    <select id="queryList" resultMap="XwContentMap">
+        select * from xwlbo where 1 = 1
+        <if test="location != null">
+            and location = #{location}
+        </if>
+        <if test="realPath != null">
+            and real_path = #{realPath}
+        </if>
+        <if test="relativePath != null">
+            and relative_path = #{relativePath}
+        </if>
+        <if test="title != null">
+            and title like #{relativePath}
+        </if>
+        <if test="content != null">
+            and content like #{relativePath}
+        </if>
+        <if test="newsDate != null">
+            and news_date = #{newsDate}
+        </if>
+    </select>
+
+    <select id="queryById" resultMap="XwContentMap">
+        select * from xwlbo where id = #{id}
+    </select>
+
+</mapper>

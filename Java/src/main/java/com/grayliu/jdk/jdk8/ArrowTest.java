@@ -6,6 +6,8 @@ import java.util.function.Function;
  * Created by liuhui-ds9 on 2018/8/30.
  *
  * 箭头前是输入，箭头后是输出
+ *
+ * 连加操作
  */
 public class ArrowTest {
 

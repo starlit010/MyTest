@@ -1,6 +1,7 @@
-package com.grayliu.autoclawer.http;
+package com.grayliu.autoclawer.html.monitor;
 
-import com.grayliu.autoclawer.http.enums.DomainEnum;
+import com.grayliu.autoclawer.html.monitor.enums.TotalDomainEnum;
+import com.grayliu.autoclawer.html.monitor.enums.DomainEnum;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -12,6 +13,8 @@ public class URLTemplate {
 
     static String temp = "http://10.58.52.202:8080/cat/r/t?" + "ip=" + "All" + "&date=#{date}" + "&type=" + "PigeonService" + "&domain=#{domain}&queryname=#{queryName}";
 
+    static String tempAll = "http://10.58.52.202:8080/cat/r/t?" + "ip=" + "All" + "&date=#{date}" + "&domain=#{domain}";
+
     public static Map<String, String> getUrl(DomainEnum domain,String date){
         Map<String,String> rtnList = new HashMap<String, String>();
 
@@ -20,6 +23,16 @@ public class URLTemplate {
         List<String> queryName = domain.getQuery(domain);
 
         queryName.forEach(query -> rtnList.put(query, temp1.replace("#{queryName}", query)));
+
+        return rtnList;
+    }
+
+    public static Map<String,String> getTotalUrl(TotalDomainEnum allDomainEnum,String date){
+        Map<String,String> rtnList = new HashMap<String, String>();
+
+        String temp1 = tempAll.replace("#{domain}", allDomainEnum.getDomain()).replace("#{date}", date);
+
+        rtnList.put(allDomainEnum.getDomain(), temp1.replace("#{queryName}", allDomainEnum.getDomain()));
 
         return rtnList;
     }

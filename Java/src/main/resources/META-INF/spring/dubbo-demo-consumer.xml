@@ -35,6 +35,7 @@
     <!-- 使用multicast广播注册中心暴露发现服务地址 -->
     <!--<dubbo:registry address="multicast://224.5.6.7:1234" />-->
 
+
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
     <!--<dubbo:reference id="shoppingCartQueryClient" interface="com.gome.pangu.trading.cart.client.ShoppingCartQueryClient" />-->
     <!--<dubbo:consumer loadbalance="random" timeout="5000" check="false"/>-->
@@ -45,11 +46,14 @@
 
     <!--<dubbo:reference id="shoppingCartQueryClient" interface="com.gome.pangu.trading.cart.client.ShoppingCartQueryClient" check="false" version="1.2.5"/>-->
 
+
     <!--<bean class="DubboConnection.DubboClient" init-method="start">-->
       <!--<property name="shoppingCartQueryClient" ref="shoppingCartQueryClient" />-->
     <!--</bean>-->
 
-    <!--<dubbo:service interface="com.gome.pangu.trading.cart.client.ShoppingCartQueryClient" ref="shoppingCartQueryClient" registry="zookeeper"/>-->
+
+
+    <!--<dubbo:service inf="com.gome.pangu.trading.cart.client.ShoppingCartQueryClient" ref="shoppingCartQueryClient" registry="zookeeper"/>-->
 
     <!-- 前台组appraise-service-i项目提供的服务 start -->
     <!-- 前台组appraise-service-i项目提供的服务 end   -->

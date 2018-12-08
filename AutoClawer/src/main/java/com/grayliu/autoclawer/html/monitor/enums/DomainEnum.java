@@ -1,4 +1,4 @@
-package com.grayliu.autoclawer.http.enums;
+package com.grayliu.autoclawer.html.monitor.enums;
 
 import java.util.ArrayList;
 import java.util.List;

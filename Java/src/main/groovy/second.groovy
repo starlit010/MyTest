@@ -1,14 +1,11 @@
-<<<<<<< HEAD:src/main/groovy/second.groovy
-class Child {
+package groovy
 
-    def name = 2
-=======
-package main.groovy
+import com.sun.corba.se.spi.orbutil.closure.Closure
+
 
 class Child{
 	
 	def name = 2
->>>>>>> f621b29f30389358b7c0628c31e0950a5078b0e7:Java/src/main/groovy/second.groovy
 
 }
 
