@@ -16,7 +16,7 @@ import java.util.Map;
  * Created by liuhui-ds9 on 2018/11/30.
  */
 @Component
-public class XwlboAnalysis extends HtmlAnalysis{
+public class XwlboAnalysis extends HtmlAnalysis<ContentType, Object>{
 
     @Override
     public Map<ContentType, Object> analysis(Document document) {

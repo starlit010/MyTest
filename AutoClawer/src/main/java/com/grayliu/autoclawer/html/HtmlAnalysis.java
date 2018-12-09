@@ -12,10 +12,10 @@ import java.util.Map;
  * 定义页面解析规则的模板方法
  *
  */
-public abstract class HtmlAnalysis {
+public abstract class HtmlAnalysis<K,V> {
 
-    protected Map<ContentType, Object> rtnMap = new HashMap<ContentType, Object>();
+    protected Map<K, V> rtnMap = new HashMap<K, V>();
 
-    public abstract Map<ContentType,Object> analysis(Document document);
+    public abstract Map<K,V> analysis(Document document);
 
 }
