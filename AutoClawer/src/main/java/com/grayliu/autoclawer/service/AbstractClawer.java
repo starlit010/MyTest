@@ -19,4 +19,6 @@ public abstract class AbstractClawer {
 
     public abstract void clawerHtml();
 
+    public abstract <T> void saveContent(List<T> list,Object...obj);
+
 }

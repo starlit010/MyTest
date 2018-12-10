@@ -2,6 +2,7 @@ package com.grayliu.autoclawer.controller;
 
 import com.grayliu.autoclawer.dao.XwlboDao;
 import com.grayliu.autoclawer.entity.xwlbo.Xwlbo;
+import com.grayliu.autoclawer.html.xwlbo.XwlboAnalysis;
 import com.grayliu.autoclawer.service.impl.XwlboClawer;
 import com.grayliu.autoclawer.util.DataFormatUtil;
 import org.slf4j.Logger;
@@ -55,12 +56,12 @@ public class XwlboController {
         String dateStr = request.getParameter("date");
         String realPath = request.getParameter("path");
 
-        Xwlbo xwlbo = new Xwlbo();
-        xwlbo.setDateStr(dateStr);
-        xwlbo.setRealPath(realPath);
+        XwlboClawer.HtmlInfo htmlInfo = new XwlboClawer().new HtmlInfo();
+        htmlInfo.setDateStr(dateStr);
+        htmlInfo.setRealPath(realPath);
 
-        List<Xwlbo> xwlboList = new ArrayList<Xwlbo>();
-        xwlboList.add(xwlbo);
+        List<XwlboClawer.HtmlInfo> xwlboList = new ArrayList<XwlboClawer.HtmlInfo>();
+        xwlboList.add(htmlInfo);
 
         xwlboClawer.setSearchList(xwlboList);
 

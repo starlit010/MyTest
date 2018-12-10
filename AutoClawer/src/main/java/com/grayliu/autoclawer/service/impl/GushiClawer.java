@@ -70,10 +70,6 @@ public class GushiClawer extends AbstractClawer {
         }
     }
 
-    public void clawerFromWeb(){
-
-    }
-
 
     /**
      * 编码过滤
@@ -139,7 +135,12 @@ public class GushiClawer extends AbstractClawer {
         }
     }
 
-//    public static void main(String...args){
+    @Override
+    public <T> void saveContent(List<T> list, Object... obj) {
+
+    }
+
+    //    public static void main(String...args){
 //        GushiAbstractClawer gushiClawer = new GushiAbstractClawer();
 //        gushiClawer.clawerFromFiles();
 //    }

@@ -10,7 +10,7 @@ public class English {
 
     Integer id;
 
-    Integer level;
+    Integer lvl;
 
     String property;
 

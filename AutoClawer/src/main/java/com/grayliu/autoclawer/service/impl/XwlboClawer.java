@@ -48,13 +48,13 @@ public class XwlboClawer extends AbstractClawer {
     @Autowired
     XwlboAnalysis xwlboAnalysis;
 
-    List<Xwlbo> searchList;
+    List<HtmlInfo> searchList;
 
     @Override
     public void clawerHtml() {
         super.setAnalysis(xwlboAnalysis);
-        for(Xwlbo xwlbo : searchList){
-            String realPath = xwlbo.getRealPath();
+        for(HtmlInfo htmlInfo : searchList){
+            String realPath = htmlInfo.getRealPath();
             Document document = HttpClientUtil.httpGetDocument(realPath);
             Map<ContentType, Object> contentMap = htmlAnalysis.analysis(document);
             Set<Map.Entry<ContentType, Object>> set = contentMap.entrySet();
@@ -64,7 +64,7 @@ public class XwlboClawer extends AbstractClawer {
                     switch(contentType){
                         case text:
                             List<Xwlbo> texts = (List<Xwlbo>)item.getValue();
-                            saveText(texts, xwlbo.getRealPath(), xwlbo.getDateStr());
+                            saveContent(texts, htmlInfo.getRealPath(), htmlInfo.getDateStr());
                             break;
                         case jpg:
                             String url = (String)item.getValue();
@@ -77,7 +77,23 @@ public class XwlboClawer extends AbstractClawer {
         }
     }
 
-    public void setSearchList(List<Xwlbo> xwlbos){
+    @Override
+    public <T> void saveContent(List<T> list, Object... obj) {
+        List<Xwlbo> xwlboList = (List<Xwlbo>)list;
+        xwlboList.forEach((item) -> {
+            Date date = new Date(DataFormatUtil.getDateTime((String)obj[0],sdf));
+            URL url = DataFormatUtil.parseUrl((String)obj[1]);
+            String location = url.getHost();
+            String relativePath = url.getPath();
+            item.setLocation(location);
+            item.setRealPath((String)obj[1]);
+            item.setRelativePath(relativePath);
+            item.setNewsDate(date);
+        });
+        xwlboDao.insertList(xwlboList);
+    }
+
+    public void setSearchList(List<HtmlInfo> xwlbos){
 //        Xwlbo xwlbo1 = new Xwlbo();
 //        xwlbo1.setRealPath("http://xwlbo.com/20120.html");
 //        xwlbo1.setDateStr("2018-12-0、65");
@@ -89,26 +105,12 @@ public class XwlboClawer extends AbstractClawer {
         this.searchList = xwlbos;
     }
 
-    private void saveText(List<Xwlbo> xwlboList,String realPath, String dateStr) {
-        xwlboList.forEach((item) -> {
-            Date date = new Date(DataFormatUtil.getDateTime(dateStr,sdf));
-            URL url = DataFormatUtil.parseUrl(realPath);
-            String location = url.getHost();
-            String relativePath = url.getPath();
-            item.setLocation(location);
-            item.setRealPath(realPath);
-            item.setRelativePath(relativePath);
-            item.setNewsDate(date);
-        });
-        xwlboDao.insertList(xwlboList);
-    }
-
     private void saveFile(String url){
         FileSystem fileSystem = HttpClientUtil.httpGetFile(url);
         fileSystemDao.insert(fileSystem);
     }
 
-    class HtmlInfo{
+    public class HtmlInfo{
         String realPath;
         String dateStr;
 

@@ -3,15 +3,17 @@ package com.grayliu.autoclawer.service.impl;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.grayliu.autoclawer.service.AbstractClawer;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by liuhui-ds9 on 2018/12/7.
  */
 @Component
-public class ZhihuClawer {
+public class ZhihuClawer extends AbstractClawer{
 
 
     public void searchQuestion() {
@@ -54,4 +56,13 @@ public class ZhihuClawer {
     }
 
 
+    @Override
+    public void clawerHtml() {
+
+    }
+
+    @Override
+    public <T> void saveContent(List<T> list, Object... obj) {
+
+    }
 }

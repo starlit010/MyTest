@@ -5,7 +5,7 @@
 
     <resultMap id="EnglishMap" type="com.grayliu.autoclawer.entity.english.English">
         <id column="ID" jdbcType="INTEGER" property="id" />
-        <result column="LV" jdbcType="INTEGER" property="lv" />
+        <result column="LVL" jdbcType="INTEGER" property="lvl" />
         <result column="ENGLISH" jdbcType="VARCHAR" property="english" />
         <result column="CHINESE" jdbcType="VARCHAR" property="chinese" />
         <result column="PROPERTY" jdbcType="VARCHAR" property="property" />
@@ -15,9 +15,9 @@
     </resultMap>
 
     <insert id="insertList" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.List">
-        insert into english(lv,english,chines,property,symbol,prononce,sentence) values
+        insert into english(lvl,english,chinese,property,symbol,prononce,sentence) values
         <foreach collection="list" item="item" separator=",">
-            (#{item.lv,jdbcType=INTEGER},#{item.english,jdbcType=VARCHAR},#{item.chinese,jdbcType=VARCHAR},#{item.property,jdbcType=VARCHAR},#{item.symbel,jdbcType=VARCHAR},#{item.prononce,jdbcType=BLOB},#{item.sentence,jdbcType=VARCHAR})
+            (#{item.lvl,jdbcType=INTEGER},#{item.english,jdbcType=VARCHAR},#{item.chinese,jdbcType=VARCHAR},#{item.property,jdbcType=VARCHAR},#{item.symbol,jdbcType=VARCHAR},#{item.prononce,jdbcType=BLOB},#{item.sentence,jdbcType=VARCHAR})
         </foreach>
     </insert>
 

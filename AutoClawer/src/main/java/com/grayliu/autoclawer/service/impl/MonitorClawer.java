@@ -7,6 +7,7 @@ import com.grayliu.autoclawer.service.AbstractClawer;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,6 +21,11 @@ public class MonitorClawer extends AbstractClawer {
 //        String data1 = "2018111118";
 //        xlsx(data1);
 //        total();
+    }
+
+    @Override
+    public <T> void saveContent(List<T> list, Object... obj) {
+
     }
 
     public static void total(){

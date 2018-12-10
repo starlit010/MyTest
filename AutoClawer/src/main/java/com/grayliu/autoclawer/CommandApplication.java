@@ -1,5 +1,6 @@
 package com.grayliu.autoclawer;
 
+import com.grayliu.autoclawer.service.impl.EnglishClawer;
 import com.grayliu.autoclawer.service.impl.GushiClawer;
 import com.grayliu.autoclawer.service.impl.XwlboClawer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,9 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * Created by liuhui-ds9 on 2018/11/21.
  */
-//@EnableAutoConfiguration
-//@ComponentScan(basePackages={"com.grayliu.autoclawer"})
-//@SpringBootApplication
+@EnableAutoConfiguration
+@ComponentScan(basePackages={"com.grayliu.autoclawer"})
+@SpringBootApplication
 public class CommandApplication implements CommandLineRunner {
 
     @Autowired
@@ -24,8 +25,14 @@ public class CommandApplication implements CommandLineRunner {
     @Autowired
     XwlboClawer xwlboClawer;
 
+    @Autowired
+    EnglishClawer englishClawer;
+
     @Override
     public void run(String... strings) throws Exception {
+        englishClawer.setSearchList(null);
+        englishClawer.clawerHtml();
+
 //        gushi gushi = new gushi();
 //        gushi.setAge("asfasfd");
 //        gushi.setContent("sfasdfsf");
