@@ -1,17 +1,26 @@
-package com.grayliu.autoclawer;
+package com.grayliu.autoclawer.service.impl;
 
 import com.grayliu.autoclawer.html.monitor.HtmlData;
 import com.grayliu.autoclawer.html.monitor.HttpClawer;
 import com.grayliu.autoclawer.html.monitor.OutputTemplate;
+import com.grayliu.autoclawer.service.AbstractClawer;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
 /**
- * Created by liuhui-ds9 on 2018/11/9.
+ * Created by liuhui-ds9 on 2018/12/4.
  */
-public class Application {
+public class MonitorClawer extends AbstractClawer {
+
+    @Override
+    public void clawerHtml() {
+//        String date = new SimpleDateFormat("yyyyMMddHH").format(new Date());
+//        String data1 = "2018111118";
+//        xlsx(data1);
+//        total();
+    }
 
     public static void total(){
         HttpClawer httpClawer = new HttpClawer();
@@ -256,15 +265,6 @@ public class Application {
 //                }
 //            }
 //        });
-    }
-
-
-    public static void main(String...args){
-//        String date = new SimpleDateFormat("yyyyMMddHH").format(new Date());
-//        String data1 = "2018111118";
-//        xlsx(data1);
-
-        total();
     }
 
 
