@@ -1,6 +1,6 @@
 package com.grayliu.autoclawer.dao;
 
-import com.grayliu.autoclawer.entity.xwlbo.FileSystem;
+import com.grayliu.autoclawer.entity.fileSystem.FileSystem;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

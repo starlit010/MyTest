@@ -28,8 +28,13 @@ public class HtmlParse {
            return null;
         }
         for(int i = 0 ; i < 3 ; i++){
-            if(!StringUtils.isEmpty(str) && str.startsWith("<")){
+            if(!StringUtils.isEmpty(str) && str.startsWith("<") && str.endsWith(">")){
                 str = getContent(str);
+            }else if(!StringUtils.isEmpty(str) && str.startsWith("<")){
+                str = str.replaceFirst("<strong>央视网消息</strong>", "");
+                str = str.replaceFirst("央视网消息","");
+                str = str.replaceFirst("（新闻联播文字版）", "");
+                str = str.replaceFirst("（新闻联播）", "");
             }else{
                 break;
             }
@@ -38,8 +43,8 @@ public class HtmlParse {
     }
 
     public static void main(String...args){
-        String line = "<p><strong>12313</strong></p>";
-        System.out.println(getContent(line));
+        String line = "<p><strong>央视网消息</strong>3333</p>";
+        System.out.println(getCycleContent(line));
     }
 
 

@@ -1,4 +1,4 @@
-package com.grayliu.autoclawer.entity.xwlbo;
+package com.grayliu.autoclawer.entity.fileSystem;
 
 import lombok.Data;
 
@@ -15,10 +15,14 @@ public class FileSystem {
 
     String location;
 
+    String title;
+
     String realPath;
 
     String relativePath;
 
     byte[] content;
+
+    String contentType;
 
 }

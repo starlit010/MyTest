@@ -1,6 +1,6 @@
 package com.grayliu.autoclawer.util;
 
-import com.grayliu.autoclawer.entity.xwlbo.*;
+import com.grayliu.autoclawer.entity.fileSystem.*;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -23,7 +23,7 @@ public class HttpClientUtil {
         try {
             CloseableHttpResponse response = httpCilent.execute(httpGet);
             InputStream inputStream = response.getEntity().getContent();
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream,"UTF8");
             return parseHtml(inputStreamReader);
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,16 +57,15 @@ public class HttpClientUtil {
             InputStream inputStream = response.getEntity().getContent();
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
-            int length = inputStream.read(buffer);
-            while(length > 0){
-                byteArrayOutputStream.write(buffer);
-                length = inputStream.read(buffer);
+            int i = 0 ;
+            while( ( i = inputStream.read(buffer) ) != -1){
+                byteArrayOutputStream.write(buffer,0,i);
             }
-            byte[] result = byteArrayOutputStream.toByteArray();
-            fileSystem.setContent(result);
-
             inputStream.close();
             byteArrayOutputStream.close();
+
+            byte[] result = byteArrayOutputStream.toByteArray();
+            fileSystem.setContent(result);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

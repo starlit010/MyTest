@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by liuhui-ds9 on 2018/11/21.
  */
-public abstract class ClawerInterface{
+public abstract class AbstractClawer {
 
     public HtmlAnalysis htmlAnalysis;
 

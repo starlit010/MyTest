@@ -38,17 +38,20 @@ public class XwlboAnalysis extends HtmlAnalysis{
                         xwlbos.add(xwlbo);
                         title.delete(0,title.length());
                         content.delete(0,content.length());
-                    }else{
-                        String innerHtml = item.html();
-                        title.append(HtmlParse.getCycleContent(innerHtml));
                     }
+                    title.append(HtmlParse.getCycleContent(item.html()));
                     break;
                 case content:
-                    String innerHtml = item.html();
-                    content.append(HtmlParse.getCycleContent(innerHtml));break;
-                default:break;
+                    content.append(HtmlParse.getCycleContent(item.html()));
+                    break;
             }
         } );
+        if(title.length()>0 && content.length()>0){
+            Xwlbo xwlbo = new Xwlbo();
+            xwlbo.setTitle(title.toString());
+            xwlbo.setContent(content.toString());
+            xwlbos.add(xwlbo);
+        }
         rtnMap.put(ContentType.text,xwlbos);
         return rtnMap;
     }

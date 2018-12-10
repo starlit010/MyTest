@@ -5,7 +5,7 @@ import com.grayliu.autoclawer.entity.gushi.Gushi;
 import com.grayliu.autoclawer.html.gushi.GushiPage;
 import com.grayliu.autoclawer.html.monitor.HtmlData;
 import com.grayliu.autoclawer.html.monitor.HttpClawer;
-import com.grayliu.autoclawer.service.ClawerInterface;
+import com.grayliu.autoclawer.service.AbstractClawer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ import java.util.function.Function;
  *
  */
 @Service
-public class GushiClawer extends ClawerInterface {
+public class GushiClawer extends AbstractClawer {
 
     @Autowired
     GushiDao gushiDao;
@@ -140,7 +140,7 @@ public class GushiClawer extends ClawerInterface {
     }
 
 //    public static void main(String...args){
-//        GushiClawer gushiClawer = new GushiClawer();
+//        GushiAbstractClawer gushiClawer = new GushiAbstractClawer();
 //        gushiClawer.clawerFromFiles();
 //    }
 

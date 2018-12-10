@@ -21,11 +21,11 @@ public class ContentState {
         if(StringUtils.isEmpty(value)){
             return null;
         }
-        if(value.startsWith("<p><strong><a href") && currentState == State.title){
+        if(value.startsWith("<p><strong>") && currentState == State.title){
             currentState = State.title;
         }else if(value.startsWith("<p>") && currentState == State.title){
             currentState = State.content;
-        }else if(value.startsWith("<p><strong><a href") && currentState == State.content){
+        }else if(value.startsWith("<p><strong>") && currentState == State.content){
             currentState = State.title;
         }else if(value.startsWith("<p>") && currentState == State.content){
             currentState = State.content;

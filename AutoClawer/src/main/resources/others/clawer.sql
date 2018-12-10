@@ -27,7 +27,7 @@ CREATE TABLE `filesystem` (
 
 CREATE TABLE `xwlbo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) DEFAULT NULL,
+  `title` mediumtext,
   `content` mediumtext,
   `location` varchar(100) DEFAULT NULL,
   `real_path` varchar(100) DEFAULT NULL,
@@ -35,6 +35,8 @@ CREATE TABLE `xwlbo` (
   `news_date` date DEFAULT NULL,
   `create_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  FULLTEXT KEY `content` (`content`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+  FULLTEXT KEY `content` (`content`),
+  FULLTEXT KEY `title` (`title`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 

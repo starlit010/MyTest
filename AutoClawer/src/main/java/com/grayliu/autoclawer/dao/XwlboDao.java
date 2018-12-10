@@ -1,6 +1,5 @@
 package com.grayliu.autoclawer.dao;
 
-import com.grayliu.autoclawer.entity.xwlbo.FileSystem;
 import com.grayliu.autoclawer.entity.xwlbo.Xwlbo;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -9,5 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface XwlboDao extends BaseDao<Xwlbo> {
+
 
 }

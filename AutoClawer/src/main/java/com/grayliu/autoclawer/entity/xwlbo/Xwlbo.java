@@ -2,7 +2,7 @@ package com.grayliu.autoclawer.entity.xwlbo;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by liuhui-ds9 on 2018/11/30.
@@ -25,5 +25,7 @@ public class Xwlbo {
     Date newsDate;
 
     Date createDate;
+
+    String dateStr;
 
 }
