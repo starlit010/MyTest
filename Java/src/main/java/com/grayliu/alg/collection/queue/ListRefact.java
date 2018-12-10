@@ -5,7 +5,7 @@ package com.grayliu.alg.collection.queue;
  */
 public class ListRefact {
 
-    public static void main(String...args){
+    public static void main(String... args) {
         Node node1 = new Node(1);
         Node node2 = new Node(2);
         Node node3 = new Node(3);
@@ -20,7 +20,7 @@ public class ListRefact {
         Node newNode = null;
         Node secondNode = null;
 
-        while(firstNode.hasNext()){
+        while (firstNode.hasNext()) {
             secondNode = firstNode.getNextNode();
 
             firstNode.setNext(newNode);
@@ -34,9 +34,9 @@ public class ListRefact {
         printNode(newNode);
     }
 
-    public static void printNode(Node node){
+    public static void printNode(Node node) {
         System.out.println(node.data);
-        if(node.hasNext()){
+        if (node.hasNext()) {
             printNode(node.getNextNode());
         }
     }
@@ -46,23 +46,23 @@ class Node {
     int data = 0;
     Node next = null;
 
-    public Node(int i){
+    public Node(int i) {
         data = i;
     }
 
-    public void setNext(Node next){
+    public void setNext(Node next) {
         this.next = next;
     }
 
-    public boolean hasNext(){
-        if(next != null){
+    public boolean hasNext() {
+        if (next != null) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public Node getNextNode(){
+    public Node getNextNode() {
         return next;
     }
 }

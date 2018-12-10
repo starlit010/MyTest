@@ -92,22 +92,22 @@ public class QuickSort {
 //            }
     }
 
-    public static void quickSortThree(int[] array , int front , int back) {
-        if(array == null || front < 0 || front >= array.length || front >= back || back <= front || back >= array.length  ){
+    public static void quickSortThree(int[] array, int front, int back) {
+        if (array == null || front < 0 || front >= array.length || front >= back || back <= front || back >= array.length) {
             return;
         }
 
-        int middle = array[front + (back - front) /2] ;
+        int middle = array[front + (back - front) / 2];
         int tempFront = front;
         int tempBack = back;
 
-        while(tempFront < tempBack){
+        while (tempFront < tempBack) {
 
-            while(tempFront < tempBack && array[tempFront] < middle){
+            while (tempFront < tempBack && array[tempFront] < middle) {
                 tempFront++;
             }
 
-            while(tempBack > tempFront && array[tempBack] >= middle){
+            while (tempBack > tempFront && array[tempBack] >= middle) {
                 tempBack--;
             }
 
@@ -117,7 +117,7 @@ public class QuickSort {
 
         }
 
-        quickSortThree(array, front,tempFront - 1);
+        quickSortThree(array, front, tempFront - 1);
         quickSortThree(array, tempFront + 1, back);
 
 

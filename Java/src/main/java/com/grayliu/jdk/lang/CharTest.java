@@ -6,14 +6,14 @@ package com.grayliu.jdk.lang;
 public class CharTest {
 
 
-    public static void main(String...args){
+    public static void main(String... args) {
 //        String str = "����";
 //        char[] chars = str.toCharArray();
 //        byte[] bytes = str.getBytes();
 //        System.out.println(chars.length);
 //        System.out.println(bytes.length);
 
-        System.out.println(4.028*1);
+        System.out.println(4.028 * 1);
     }
 
 

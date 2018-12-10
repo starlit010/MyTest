@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  */
 public class PatternTest {
 
-    public static void main(String...args){
+    public static void main(String... args) {
 
         String pStr = "((?:(?:25[0-5]|2[0-4]\\d|[1-9]\\d|\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[1-9]\\d|\\d))";
 

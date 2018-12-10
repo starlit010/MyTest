@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.grayliu.autoclawer.dao.EnglishDao">
+
+    <resultMap id="EnglishMap" type="com.grayliu.autoclawer.entity.english.English">
+        <id column="ID" jdbcType="INTEGER" property="id" />
+        <result column="LV" jdbcType="INTEGER" property="lv" />
+        <result column="ENGLISH" jdbcType="VARCHAR" property="english" />
+        <result column="CHINESE" jdbcType="VARCHAR" property="chinese" />
+        <result column="PROPERTY" jdbcType="VARCHAR" property="property" />
+        <result column="SYMBOL" jdbcType="VARCHAR" property="symbol" />
+        <result column="PRONONCE" jdbcType="BLOB" property="prononce" />
+        <result column="SENTENCE" jdbcType="VARCHAR" property="sentence" />
+    </resultMap>
+
+    <insert id="insertList" useGeneratedKeys="true" keyProperty="id" parameterType="java.util.List">
+        insert into english(lv,english,chines,property,symbol,prononce,sentence) values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.lv,jdbcType=INTEGER},#{item.english,jdbcType=VARCHAR},#{item.chinese,jdbcType=VARCHAR},#{item.property,jdbcType=VARCHAR},#{item.symbel,jdbcType=VARCHAR},#{item.prononce,jdbcType=BLOB},#{item.sentence,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+
+
+</mapper>

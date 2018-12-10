@@ -12,10 +12,9 @@ public class SimpleConsumer {
     public static void main(String[] args) throws FileNotFoundException {
 
 
-
-        Thread thread_1 = new Thread(){
+        Thread thread_1 = new Thread() {
             @Override
-            public void run(){
+            public void run() {
                 Properties props = new Properties();
                 props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.62.239:9092,10.58.217.132:9092");
                 props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
@@ -27,7 +26,7 @@ public class SimpleConsumer {
 
                 Map<String, List<PartitionInfo>> listTopics = consumer.listTopics();
                 Set<Map.Entry<String, List<PartitionInfo>>> entries = listTopics.entrySet();
-                for (Map.Entry<String, List<PartitionInfo>> entry: entries) {
+                for (Map.Entry<String, List<PartitionInfo>> entry : entries) {
                     System.out.println("topic:" + entry.getKey());
                     System.out.println("topic:" + entry.getValue());
                 }
@@ -35,16 +34,16 @@ public class SimpleConsumer {
                 consumer.subscribe(Arrays.asList("cluster-test"));
                 while (true) {
                     ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(30));
-                    for (ConsumerRecord<String, String> record : records){
+                    for (ConsumerRecord<String, String> record : records) {
                         System.out.printf("offset = %d, key = %s, value = %s, partition = %s, coustom = %s%n", record.offset(), record.key(), record.value(), record.partition(), 1);
                     }
                 }
             }
         };
 
-        Thread thread_2 = new Thread(){
+        Thread thread_2 = new Thread() {
             @Override
-            public void run(){
+            public void run() {
                 Properties props = new Properties();
                 props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.62.239:9092,10.58.217.132:9092");
                 props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
@@ -56,7 +55,7 @@ public class SimpleConsumer {
 
                 Map<String, List<PartitionInfo>> listTopics = consumer.listTopics();
                 Set<Map.Entry<String, List<PartitionInfo>>> entries = listTopics.entrySet();
-                for (Map.Entry<String, List<PartitionInfo>> entry: entries) {
+                for (Map.Entry<String, List<PartitionInfo>> entry : entries) {
                     System.out.println("topic:" + entry.getKey());
                     System.out.println("topic:" + entry.getValue());
                 }
@@ -64,16 +63,16 @@ public class SimpleConsumer {
                 consumer.subscribe(Arrays.asList("cluster-test"));
                 while (true) {
                     ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(30));
-                    for (ConsumerRecord<String, String> record : records){
+                    for (ConsumerRecord<String, String> record : records) {
                         System.out.printf("offset = %d, key = %s, value = %s, partition = %s, coustom = %s%n", record.offset(), record.key(), record.value(), record.partition(), 2);
                     }
                 }
             }
         };
 
-        Thread thread_3 = new Thread(){
+        Thread thread_3 = new Thread() {
             @Override
-            public void run(){
+            public void run() {
                 Properties props = new Properties();
                 props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.62.239:9092,10.58.217.132:9092");
                 props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
@@ -85,7 +84,7 @@ public class SimpleConsumer {
 
                 Map<String, List<PartitionInfo>> listTopics = consumer.listTopics();
                 Set<Map.Entry<String, List<PartitionInfo>>> entries = listTopics.entrySet();
-                for (Map.Entry<String, List<PartitionInfo>> entry: entries) {
+                for (Map.Entry<String, List<PartitionInfo>> entry : entries) {
                     System.out.println("topic:" + entry.getKey());
                     System.out.println("topic:" + entry.getValue());
                 }
@@ -93,7 +92,7 @@ public class SimpleConsumer {
                 consumer.subscribe(Arrays.asList("cluster-test"));
                 while (true) {
                     ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(30));
-                    for (ConsumerRecord<String, String> record : records){
+                    for (ConsumerRecord<String, String> record : records) {
                         System.out.printf("offset = %d, key = %s, value = %s, partition = %s, coustom = %s%n", record.offset(), record.key(), record.value(), record.partition(), 3);
                     }
                 }

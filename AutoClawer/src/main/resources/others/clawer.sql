@@ -40,3 +40,16 @@ CREATE TABLE `xwlbo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE `english` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lv` int(11) DEFAULT NULL,
+  `property` varchar(100) DEFAULT NULL,
+  `english` varchar(100) DEFAULT NULL,
+  `chinese` varchar(100) DEFAULT NULL,
+  `symbol` varchar(100) DEFAULT NULL,
+  `prononce` blob,
+  `sentence` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

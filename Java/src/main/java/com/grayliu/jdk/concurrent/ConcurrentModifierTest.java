@@ -8,14 +8,14 @@ import java.util.Iterator;
  */
 public class ConcurrentModifierTest {
 
-    public static void main(String...args){
+    public static void main(String... args) {
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(2);
 
         Iterator iterator = list.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Integer item = (Integer) iterator.next();
-            if(item == 2){
+            if (item == 2) {
 //                list.remove(item);
                 iterator.remove();
             }

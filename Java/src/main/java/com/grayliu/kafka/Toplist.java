@@ -5,7 +5,7 @@ package com.grayliu.kafka;
  */
 public class Toplist {
 
-    public static void main(String...args){
+    public static void main(String... args) {
 
     }
 

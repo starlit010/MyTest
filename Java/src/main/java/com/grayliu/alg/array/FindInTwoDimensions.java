@@ -9,25 +9,27 @@ import java.util.Arrays;
 public class FindInTwoDimensions {
 
 
-    public boolean Find(int target, int [][] array) {
-        if(array.length == 0){
+    public boolean Find(int target, int[][] array) {
+        if (array.length == 0) {
             return false;
         }
         int y = array.length - 1;
         int x = array[0].length - 1;
-        if(x < 0){
+        if (x < 0) {
             return false;
         }
-        if(target > array[y][x]){
+        if (target > array[y][x]) {
             return false;
         }
-        outer:for(int m = 0 ; m <= y ; m++){
-            inner:for(int n = x ; n >= 0 ; n--){
-                if(target > array[m][n]){
+        outer:
+        for (int m = 0; m <= y; m++) {
+            inner:
+            for (int n = x; n >= 0; n--) {
+                if (target > array[m][n]) {
                     continue outer;
-                }else if(target == array[m][n]){
+                } else if (target == array[m][n]) {
                     return true;
-                }else{
+                } else {
                     continue inner;
                 }
             }
@@ -36,7 +38,7 @@ public class FindInTwoDimensions {
     }
 
 
-    public static void main(String...args){
+    public static void main(String... args) {
         //16,[[]]
         //7,[[1,2,3,4],[7,8,9,10]]
         int[] array = {1,2,3,4};
