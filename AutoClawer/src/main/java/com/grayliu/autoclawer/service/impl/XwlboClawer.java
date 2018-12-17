@@ -81,8 +81,8 @@ public class XwlboClawer extends AbstractClawer {
     public <T> void saveContent(List<T> list, Object... obj) {
         List<Xwlbo> xwlboList = (List<Xwlbo>)list;
         xwlboList.forEach((item) -> {
-            Date date = new Date(DataFormatUtil.getDateTime((String)obj[0],sdf));
-            URL url = DataFormatUtil.parseUrl((String)obj[1]);
+            Date date = new Date(DataFormatUtil.getDateTime((String)obj[1],sdf));
+            URL url = DataFormatUtil.parseUrl((String)obj[0]);
             String location = url.getHost();
             String relativePath = url.getPath();
             item.setLocation(location);

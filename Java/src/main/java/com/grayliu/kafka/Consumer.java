@@ -26,17 +26,11 @@ public class Consumer {
         ArrayList<TopicPartition> topicPartitions = new ArrayList<TopicPartition>();
         Map<String, List<PartitionInfo>> listTopics = consumer.listTopics();
         Set<Map.Entry<String, List<PartitionInfo>>> entries = listTopics.entrySet();
-<<<<<<< HEAD
 
-        for (Map.Entry<String, List<PartitionInfo>> entry : entries) {
-            System.out.println("topic:" + entry.getKey());
-            System.out.println("topic:" + entry.getValue());
 
-=======
         for (Map.Entry<String, List<PartitionInfo>> entry: entries) {
 //            System.out.println("topic:" + entry.getKey());
 //            System.out.println("topic:" + entry.getValue());
->>>>>>> 6a15cda51e1578d0a6e84bb05fa0d74cc61286e9
         }
 
         consumer.subscribe(Arrays.asList("cluster-test"));
@@ -210,21 +204,14 @@ public class Consumer {
         props.put("bootstrap.servers", "10.58.62.239:9092,10.58.217.132:9092");
         props.put("enable.auto.commit", "false");
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
-<<<<<<< HEAD
 
 //        consumer.subscribe(topics);
 //        consumer.seek(new TopicPartition("cluster-test", 0), 1);
 
-=======
->>>>>>> 6a15cda51e1578d0a6e84bb05fa0d74cc61286e9
 //        consumer.subscribe(Arrays.asList(topic));
         TopicPartition topicPartition = new TopicPartition("cluster-test", 0);
         consumer.assign(Collections.singletonList(topicPartition));
         consumer.seekToBeginning(Collections.singleton(topicPartition));
-<<<<<<< HEAD
-
-=======
->>>>>>> 6a15cda51e1578d0a6e84bb05fa0d74cc61286e9
         ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
         for (ConsumerRecord<String, String> record : records) {
             System.err.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
@@ -246,19 +233,11 @@ public class Consumer {
         props.put("auto.offset.reset", "earliest");
         props.put("session.timeout.ms", "30000");
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6a15cda51e1578d0a6e84bb05fa0d74cc61286e9
         KafkaConsumer<String ,String> consumer = new KafkaConsumer<String ,String>(props);
         consumer.subscribe(Arrays.asList(topicName));
         consumer.assign(Arrays.asList(new TopicPartition(topicName, 0)));
         consumer.seekToBeginning(Arrays.asList(new TopicPartition(topicName, 0)));//不改变当前offset
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6a15cda51e1578d0a6e84bb05fa0d74cc61286e9
         final int minBatchSize = 5;
         List<ConsumerRecord<String, String>> buffer = new ArrayList<>();
         while (true) {
