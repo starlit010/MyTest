@@ -41,7 +41,7 @@ public class GushiClawer extends AbstractClawer {
     }
 
     @Override
-    public void clawerHtml(){
+    public <T> T  clawerHtml(){
 
 //        String filePath = url.getFile();
 //        File file = new File(filePath);
@@ -68,6 +68,7 @@ public class GushiClawer extends AbstractClawer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
 

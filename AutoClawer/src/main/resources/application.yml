@@ -37,7 +37,7 @@ spring:
       expose-session-attributes: false
       expose-spring-macro-helpers: true
       prefer-file-system-access: true
-      suffix: .html
+      suffix: .ftl
       template-loader-path: classpath:/templates/
       settings:
         output_format: HTMLOutputFormat

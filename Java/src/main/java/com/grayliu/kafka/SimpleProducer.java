@@ -1,5 +1,6 @@
 package com.grayliu.kafka;
 
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
@@ -11,7 +12,8 @@ public class SimpleProducer {
 
     public static void main(String[] args) throws FileNotFoundException {
         Properties props = new Properties();
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.217.132:9092,10.58.62.239:9092");
+//        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.217.132:9092,10.58.62.239:9092");
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.115.0.149:9092,10.115.0.150:9092,10.115.0.151:9092");
         props.put(ProducerConfig.ACKS_CONFIG, "all");
         props.put(ProducerConfig.RETRIES_CONFIG, 3);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);

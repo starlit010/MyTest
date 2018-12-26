@@ -16,11 +16,12 @@ import java.util.Map;
 public class MonitorClawer extends AbstractClawer {
 
     @Override
-    public void clawerHtml() {
+    public <T> T  clawerHtml() {
 //        String date = new SimpleDateFormat("yyyyMMddHH").format(new Date());
 //        String data1 = "2018111118";
 //        xlsx(data1);
 //        total();
+        return null;
     }
 
     @Override

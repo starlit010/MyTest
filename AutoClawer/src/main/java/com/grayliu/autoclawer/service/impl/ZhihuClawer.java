@@ -57,8 +57,8 @@ public class ZhihuClawer extends AbstractClawer{
 
 
     @Override
-    public void clawerHtml() {
-
+    public <T> T  clawerHtml() {
+        return null;
     }
 
     @Override

@@ -52,7 +52,7 @@ public class EnglishClawer extends AbstractClawer {
     List<HtmlInfo> searchList;
 
     @Override
-    public void clawerHtml() {
+    public <T> T  clawerHtml() {
         super.setAnalysis(englishAnalysis);
         try {
             for(HtmlInfo htmlInfo : searchList){
@@ -80,6 +80,7 @@ public class EnglishClawer extends AbstractClawer {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     @Override

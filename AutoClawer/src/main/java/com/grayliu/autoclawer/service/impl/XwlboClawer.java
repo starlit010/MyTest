@@ -1,5 +1,6 @@
 package com.grayliu.autoclawer.service.impl;
 
+import com.grayliu.autoclawer.bean.xwlbo.HtmlInfo;
 import com.grayliu.autoclawer.dao.FileSystemDao;
 import com.grayliu.autoclawer.dao.XwlboDao;
 import com.grayliu.autoclawer.entity.fileSystem.FileSystem;
@@ -51,7 +52,7 @@ public class XwlboClawer extends AbstractClawer {
     List<HtmlInfo> searchList;
 
     @Override
-    public void clawerHtml() {
+    public <T> T clawerHtml() {
         super.setAnalysis(xwlboAnalysis);
         for(HtmlInfo htmlInfo : searchList){
             String realPath = htmlInfo.getRealPath();
@@ -75,6 +76,7 @@ public class XwlboClawer extends AbstractClawer {
                 });
             }
         }
+        return null;
     }
 
     @Override
@@ -86,7 +88,7 @@ public class XwlboClawer extends AbstractClawer {
             String location = url.getHost();
             String relativePath = url.getPath();
             item.setLocation(location);
-            item.setRealPath((String)obj[1]);
+            item.setRealPath((String)obj[0]);
             item.setRelativePath(relativePath);
             item.setNewsDate(date);
         });
@@ -110,24 +112,5 @@ public class XwlboClawer extends AbstractClawer {
         fileSystemDao.insert(fileSystem);
     }
 
-    public class HtmlInfo{
-        String realPath;
-        String dateStr;
 
-        public String getDateStr() {
-            return dateStr;
-        }
-
-        public void setDateStr(String dateStr) {
-            this.dateStr = dateStr;
-        }
-
-        public String getRealPath() {
-            return realPath;
-        }
-
-        public void setRealPath(String realPath) {
-            this.realPath = realPath;
-        }
-    }
 }

@@ -16,20 +16,21 @@ public class SimpleConsumer {
             @Override
             public void run() {
                 Properties props = new Properties();
-                props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.62.239:9092,10.58.217.132:9092");
+//                props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.62.239:9092,10.58.217.132:9092");
+                props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.115.0.149:9092,10.115.0.150:9092,10.115.0.151:9092");
                 props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
                 props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
                 props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
                 props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-                props.put(ConsumerConfig.GROUP_ID_CONFIG, "partition_1");
+                props.put(ConsumerConfig.GROUP_ID_CONFIG, "test1");
                 KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
 
-                Map<String, List<PartitionInfo>> listTopics = consumer.listTopics();
-                Set<Map.Entry<String, List<PartitionInfo>>> entries = listTopics.entrySet();
-                for (Map.Entry<String, List<PartitionInfo>> entry : entries) {
-                    System.out.println("topic:" + entry.getKey());
-                    System.out.println("topic:" + entry.getValue());
-                }
+//                Map<String, List<PartitionInfo>> listTopics = consumer.listTopics();
+//                Set<Map.Entry<String, List<PartitionInfo>>> entries = listTopics.entrySet();
+//                for (Map.Entry<String, List<PartitionInfo>> entry : entries) {
+//                    System.out.println("topic:" + entry.getKey());
+//                    System.out.println("topic:" + entry.getValue());
+//                }
 
                 consumer.subscribe(Arrays.asList("cluster-test"));
                 while (true) {
@@ -45,7 +46,8 @@ public class SimpleConsumer {
             @Override
             public void run() {
                 Properties props = new Properties();
-                props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.62.239:9092,10.58.217.132:9092");
+//                props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.62.239:9092,10.58.217.132:9092");
+                props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.115.0.149:9092,10.115.0.150:9092,10.115.0.151:9092");
                 props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
                 props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
                 props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
@@ -53,12 +55,12 @@ public class SimpleConsumer {
                 props.put(ConsumerConfig.GROUP_ID_CONFIG, "partition_1");
                 KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
 
-                Map<String, List<PartitionInfo>> listTopics = consumer.listTopics();
-                Set<Map.Entry<String, List<PartitionInfo>>> entries = listTopics.entrySet();
-                for (Map.Entry<String, List<PartitionInfo>> entry : entries) {
-                    System.out.println("topic:" + entry.getKey());
-                    System.out.println("topic:" + entry.getValue());
-                }
+//                Map<String, List<PartitionInfo>> listTopics = consumer.listTopics();
+//                Set<Map.Entry<String, List<PartitionInfo>>> entries = listTopics.entrySet();
+//                for (Map.Entry<String, List<PartitionInfo>> entry : entries) {
+//                    System.out.println("topic:" + entry.getKey());
+//                    System.out.println("topic:" + entry.getValue());
+//                }
 
                 consumer.subscribe(Arrays.asList("cluster-test"));
                 while (true) {
@@ -74,7 +76,8 @@ public class SimpleConsumer {
             @Override
             public void run() {
                 Properties props = new Properties();
-                props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.62.239:9092,10.58.217.132:9092");
+//                props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.58.62.239:9092,10.58.217.132:9092");
+                props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.115.0.149:9092,10.115.0.150:9092,10.115.0.151:9092");
                 props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
                 props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
                 props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
@@ -102,9 +105,9 @@ public class SimpleConsumer {
 
         try {
             thread_1.start();
-            thread_2.start();
+//            thread_2.start();
             thread_1.join();
-            thread_2.join();
+//            thread_2.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

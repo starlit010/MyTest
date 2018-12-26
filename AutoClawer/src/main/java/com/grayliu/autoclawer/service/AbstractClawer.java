@@ -17,7 +17,7 @@ public abstract class AbstractClawer {
         this.htmlAnalysis = htmlAnalysis;
     }
 
-    public abstract void clawerHtml();
+    public abstract <T> T clawerHtml();
 
     public abstract <T> void saveContent(List<T> list,Object...obj);
 

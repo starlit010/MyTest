@@ -25,7 +25,9 @@ public class KafkaUtils {
 //        props.put("enable.auto.commit", "false");
         //����ʹ���ʼ��offsetƫ����Ϊ��group.id�����硣��������ã������latest����topic����һ����Ϣ��offset
         //�������latest��������ֻ�ܵõ�����������������������Ϣ
-        properties.put("bootstrap.servers", "10.58.217.132:9092,10.58.62.239:9092");
+//        properties.put("bootstrap.servers", "10.58.217.132:9092,10.58.62.239:9092");
+        properties.put("bootstrap.servers","10.115.0.149:9092");
+
 //        properties.put("group.id", "group");
 //        properties.put("bootstrap.servers", "10.58.217.132:9092,10.58.62.239:9092");
         properties.put("session.timeout.ms", "30000");
