@@ -17,7 +17,7 @@
                <div style="clear:both"/>
             </div>
         </#list>
-        <div><a href="?page=${page + 1}">next</a></div>
+        <div><a href="?page=${page + 1}">next</a><a href="?page=${page - 1}">prev</a></div>
     </div>
 </body>
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
