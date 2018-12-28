@@ -51,7 +51,14 @@ public class EnglishAnalysis extends HtmlAnalysis<ContentType, List<English>> {
                         english.setSymbol(sym);break;
                     case 5:
                         String chn = td.select("div span").html();
-                        english.setChinese(chn);break;
+                        String[] chnArray = chn.split("\\.", 2);
+                        if(chnArray.length == 2){
+                            english.setProperty(chnArray[0]);
+                            english.setChinese(chnArray[1]);
+                        }else{
+                            english.setChinese(chn);
+                        }
+                        break;
                     case 6:
                         String sent = td.select("a").attr("title").toString();
                         sent = sent.replace("单词 "+ eng +" 的例句||||","");
@@ -68,6 +75,15 @@ public class EnglishAnalysis extends HtmlAnalysis<ContentType, List<English>> {
         }
         rtn.put(ContentType.text, englishs);
         return rtn;
+    }
+
+
+    public static void main(String...args){
+
+        String str = "vi. 发低哼声 vt. 用哼声表示 n. 嗡嗡声；哼声；杂声";
+        String[] strArray = str.split("\\.",2);
+        System.out.println(strArray.length + strArray[0] + strArray[1]);
+
     }
 
 }

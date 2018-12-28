@@ -17,9 +17,9 @@ import java.util.List;
 /**
  * Created by liuhui-ds9 on 2018/11/21.
  */
-//@EnableAutoConfiguration
-//@ComponentScan(basePackages={"com.grayliu.autoclawer"})
-//@SpringBootApplication
+@EnableAutoConfiguration
+@ComponentScan(basePackages={"com.grayliu.autoclawer"})
+@SpringBootApplication
 public class CommandApplication implements CommandLineRunner {
 
     @Autowired
@@ -33,8 +33,8 @@ public class CommandApplication implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-//        englishClawer.setSearchList(null);
-//        englishClawer.clawerHtml();
+        englishClawer.setSearchList(null);
+        englishClawer.clawerHtml();
 
 //        gushi gushi = new gushi();
 //        gushi.setAge("asfasfd");

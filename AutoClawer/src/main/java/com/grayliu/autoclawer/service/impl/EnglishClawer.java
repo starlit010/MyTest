@@ -99,7 +99,7 @@ public class EnglishClawer extends AbstractClawer {
 
             for(int lvl = 1 ; lvl <= 7 ; lvl++){
                 for(int page = 1 ; page <= 50 ; page++){
-                    String url = "http://word.qsbdc.com/wl.php?level="+lvl+"&&tag=all&&page_id="+ page;
+                        String url = "http://word.qsbdc.com/wl.php?level="+lvl+"&tag=all&page_id="+ page;
                     HtmlInfo htmlInfo = new HtmlInfo();
                     htmlInfo.setLevel(lvl);
                     htmlInfo.setRealPath(url);
